@@ -137,20 +137,50 @@ services:
 volumes:
   statics:
     name: ${COMPOSE_PROJECT_NAME}-statics
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /hdd_data/docker-data/statics
   nginx-confd:
     name: ${COMPOSE_PROJECT_NAME}-nginxconfd
   nginx-certificates:
     name: ${COMPOSE_PROJECT_NAME}-nginxcerts
   geoserver-data-dir:
     name: ${COMPOSE_PROJECT_NAME}-gsdatadir
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /hdd_data/docker-data/gsdatadir
   dbdata:
     name: ${COMPOSE_PROJECT_NAME}-dbdata
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /hdd_data/docker-data/dbdata
   dbbackups:
     name: ${COMPOSE_PROJECT_NAME}-dbbackups
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /host/path/to/volume
   backup-restore:
     name: ${COMPOSE_PROJECT_NAME}-backup-restore
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /hdd_data/docker-data/backup-restore
   data:
     name: ${COMPOSE_PROJECT_NAME}-data
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /hdd_data/docker-data/data
   tmp:
     name: ${COMPOSE_PROJECT_NAME}-tmp
   rabbitmq:
