@@ -166,7 +166,7 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /host/path/to/volume
+      device: /hdd_data/docker-data/dbbackups
   backup-restore:
     name: ${COMPOSE_PROJECT_NAME}-backup-restore
     driver: local
