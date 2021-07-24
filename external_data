@@ -1,0 +1,6 @@
+#Crear primero los volumenes segun el siguiente código.
+#Cambiar el device y el bind segun corresponda.
+docker volume create --driver local \
+    --opt type=none \
+    --opt device=/hdd_data/docker-data/dbbackups \
+    --opt o=bind dbbackups
